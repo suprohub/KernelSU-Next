@@ -1,4 +1,4 @@
-use anyhow::{Context, Ok, Result, ensure};
+use anyhow::{Ok, Result, ensure};
 use std::{
     path::{Path, PathBuf},
     process::Command,

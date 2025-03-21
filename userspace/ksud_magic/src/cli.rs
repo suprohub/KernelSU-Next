@@ -6,7 +6,6 @@ use std::path::{Path, PathBuf};
 use android_logger::Config;
 use log::LevelFilter;
 
-
 use crate::defs::KSUD_VERBOSE_LOG_FILE;
 use crate::{apk_sign, assets, debug, defs, init_event, ksucalls, module, utils};
 

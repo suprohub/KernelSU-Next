@@ -7,15 +7,11 @@ use std::process::Stdio;
 
 use anyhow::Context;
 use anyhow::Result;
-use anyhow::anyhow;
 use anyhow::bail;
 use anyhow::ensure;
 use regex_lite::Regex;
 use which::which;
 
-use crate::defs;
-use crate::defs::BACKUP_FILENAME;
-use crate::defs::{KSU_BACKUP_DIR, KSU_BACKUP_FILE_PREFIX};
 use crate::{assets, utils};
 
 #[cfg(target_os = "android")]
@@ -241,7 +237,7 @@ pub fn restore(
     );
 
     let mut new_boot = None;
-    let mut from_backup = false;
+    let from_backup = false;
 
     #[cfg(target_os = "android")]
     if do_cpio_cmd(&magiskboot, workdir, &format!("exists {BACKUP_FILENAME}")).is_ok() {
